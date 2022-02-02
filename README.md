@@ -1,1 +1,1 @@
-# gitops-rabbitmq
+# argocd-tanzu-gitops
