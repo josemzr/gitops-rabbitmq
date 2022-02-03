@@ -3,6 +3,13 @@ kind: RabbitmqCluster
 metadata:
   name: rabbitmq-bl-2
 spec:
+  resources:
+    requests:
+      memory: "250Mi"
+      cpu: "250m"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
   replicas: 1
   service:
     type: LoadBalancer
