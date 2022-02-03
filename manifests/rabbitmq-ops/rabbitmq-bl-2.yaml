@@ -1,0 +1,17 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  name: rabbitmq-bl-2
+spec:
+  replicas: 1
+  service:
+    type: LoadBalancer
+  persistence:
+    storageClassName: kubernetes-storage
+    storage: 0
+  rabbitmq:
+    additionalPlugins:
+      - rabbitmq_federation
+      - rabbitmq_federation_management
+      - rabbitmq_peer_discovery_k8s
+    
