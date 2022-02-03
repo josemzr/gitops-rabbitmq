@@ -8,8 +8,8 @@ spec:
       memory: "250Mi"
       cpu: "250m"
     limits:
-      memory: "512Mi"
-      cpu: "500m"
+      memory: "250Mi"
+      cpu: "250m"
   replicas: 1
   service:
     type: LoadBalancer
