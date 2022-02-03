@@ -1,0 +1,27 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  name: rabbitmq-bl-2
+spec:
+  resources:
+    requests:
+      memory: "500Mi"
+      cpu: "500m"
+    limits:
+      memory: "500Mi"
+      cpu: "500m"
+  replicas: 1
+  service:
+    type: LoadBalancer
+  persistence:
+    storageClassName: kubernetes-storage
+    storage: 0
+  rabbitmq:
+    additionalPlugins:
+      - rabbitmq_federation
+      - rabbitmq_federation_management
+      - rabbitmq_peer_discovery_k8s
+    additionalConfig: |
+      loopback_users.guest = false
+      default_user = guest
+      default_pass = guest
